@@ -9,7 +9,7 @@ import AppBreadcrumb from './components/AppBreadcrumb';
 
 function App() {
   return (
-    <div id="shell" class="bg-body-tertiary">
+    <div id="shell" className="bg-body-tertiary">
       <Header/>
       <AppBreadcrumb/>
       <Outlet />

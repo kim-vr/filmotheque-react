@@ -27,7 +27,7 @@ export const HomeCarousel = () => {
         fetchData();
         }, []);
   return (
-        <div id="carousel" class="container">
+        <div id="carousel" className="container">
             {isLoading && <span>Données en cours de chargement...</span>}
             {!isLoading && serverError ? (
                 <span>Erreur de chargement des données !</span>

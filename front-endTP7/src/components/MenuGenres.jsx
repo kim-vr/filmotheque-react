@@ -35,8 +35,8 @@ function MenuGenres() {
     data && (
     <NavDropdown title="Genres" id="nav-dropdown">
         {data.map(genre => (
-            <a href={`/genre/${genre.name}`}>
-                <DropdownItem key={genre.id} id={genre.id} name={genre.name} type="genre"/>
+            <a key={genre.id} href={`/genre/${genre.name}`}>
+                <DropdownItem id={genre.id} name={genre.name} type="genre"/>
             </a>
         ))}
     </NavDropdown>

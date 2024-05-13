@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 
 export const GenreDetails = () => {
   const genreMovies = useLoaderData();
-  console.log(genreMovies);
+
   return ( 
     <>
       {genreMovies && genreMovies.map((genre, index) => (

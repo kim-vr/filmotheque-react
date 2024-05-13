@@ -46,8 +46,8 @@ function MenuActors() {
                 <span>{serverError.message}</span>
             ) : (
                     actors.map(actor => (
-                        <a href={`/actor/${actor.name}`}>
-                            <DropdownItem key={actor.id} id={actor.id} name={actor.name} type="actor"/>
+                        <a key={actor.id} href={`/actor/${actor.name}`}>
+                            <DropdownItem id={actor.id} name={actor.name} type="actor"/>
                         </a>
                     ))
             )}
