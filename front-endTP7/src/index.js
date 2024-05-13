@@ -34,7 +34,8 @@ const route = createBrowserRouter([
             }
             return res.json();
           });
-          return params.id?[data]: data;
+
+          return data;
         },
         children: [
           {
@@ -49,24 +50,21 @@ const route = createBrowserRouter([
                 }
                 return res.json();
               });
-              return params.id?[data]: data;
+              return data;
             },
-            //errorElement: <p>La page demandée est introuvable</p>,
           },
           {
             path: ':id',
             element: <GenreDetails/>,
             loader: async ({ request, params }) => {
-              const data = await fetch(`http://filmotheque.e-mingo.net/api/catalog/genre/${params.id}`).then((res) => {
-                console.log(res);
-                if (res.status === 404) {
-                  throw new Response("Not Found", { status: 404 });
-                }
-                return res.json();
-              });
-              return params.id?[data]: data;
+              const response = await fetch(`http://filmotheque.e-mingo.net/api/catalog/genre/${params.id}`);
+              if (response.status === 404) {
+                throw new Response("Not Found", { status: 404 });
+              }
+              
+              return response.json();
             },
-            //errorElement: <p>La page demandée est introuvable</p>,
+            errorElement: <p>La page demandée est introuvable</p>,
           },
         ],
       },
