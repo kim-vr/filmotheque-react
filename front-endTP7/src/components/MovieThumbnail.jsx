@@ -2,19 +2,19 @@ import React from 'react'
 
 const MovieThumbnail= ({ title, poster_path }) => {
   return (
-    <div class="movie col">
-              <div class="movie-image">
-                <a href={`/movie/${title}`}>
-                <span class="play"><span class="name">{title}</span></span>
-                </a>
-                <a href="#"><img  class="img-fluid img-thumbnail" src={poster_path} alt="" /></a>
-              </div>
-              <div class="rating">
-                <div class="stars">
-                  <div class="stars-in"></div>
-                </div>
-                <span class="comments">12</span>
-              </div>
+    <div className="movie col">
+      <div className="movie-image">
+        <a href={`/movie/${title}`}>
+        <span className="play"><span className="name">{title}</span></span>
+        </a>
+        <a href="#"><img  className="img-fluid img-thumbnail" src={poster_path} alt="" /></a>
+      </div>
+      <div className="rating">
+        <div className="stars">
+          <div className="stars-in"></div>
+        </div>
+        <span className="comments">12</span>
+      </div>
     </div>
   )
 }
